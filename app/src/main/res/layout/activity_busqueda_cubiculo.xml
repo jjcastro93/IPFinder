@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_busqueda_cubiculo"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:weightSum="1"
+    tools:context="com.losjuanes.ipfinder.presentacion.vistas.BusquedaCubiculoActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_weight=".1"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        android:weightSum="1">
+
+        <TextView
+            android:layout_weight=".3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/tv_cubiculo"
+            android:textSize="17dp"
+            android:gravity="center_horizontal"
+            android:layout_gravity="center_vertical"/>
+
+        <EditText
+            android:id="@+id/etCubiculo"
+            android:layout_weight=".3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:hint="H-111"/>
+
+        <Button
+            android:id="@+id/btnBuscar"
+            android:layout_weight=".4"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/btn_buscar"/>
+    </LinearLayout>
+
+    <TableLayout
+        android:id="@+id/tabla"
+        android:layout_width="match_parent"
+        android:layout_weight=".9"
+        android:layout_height="0dp">
+    </TableLayout>
+
+</LinearLayout>
