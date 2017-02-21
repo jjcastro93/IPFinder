@@ -8,17 +8,30 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".presentacion.vistas.PrincipalActivity">
+        <activity
+            android:name=".presentacion.vistas.PrincipalActivity"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
+
         <activity
             android:name=".presentacion.vistas.BusquedaCubiculoActivity"
             android:screenOrientation="portrait"
             android:parentActivityName=".presentacion.vistas.PrincipalActivity">
 
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+            <!-- Soporte para versiones 4.0 o menores -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".presentacion.vistas.PrincipalActivity">
+            </meta-data>
+        </activity>
+        <activity
+            android:name=".presentacion.vistas.BusquedaIPActivity"
+            android:screenOrientation="portrait"
+            android:parentActivityName=".presentacion.vistas.PrincipalActivity">
 
             <!-- Soporte para versiones 4.0 o menores -->
             <meta-data

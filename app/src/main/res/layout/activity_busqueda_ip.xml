@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_busqueda_ip"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.losjuanes.ipfinder.presentacion.vistas.BusquedaIPActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Consulta por IP"
+        android:gravity="center_horizontal"
+        android:textSize="35dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:orientation="horizontal"
+        android:layout_marginTop="5dp"
+        android:weightSum="1">
+
+        <TextView
+            android:layout_weight=".3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textSize="17dp"
+            android:gravity="right|center_vertical"
+            android:text="148.206."/>
+
+        <EditText
+            android:id="@+id/et_IP"
+            android:layout_weight=".3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:digits="1234567890."
+            android:hint="000.000"
+            android:inputType="numberDecimal"
+            android:maxLength="70"/>
+
+        <Button
+            android:id="@+id/btn_buscar"
+            android:layout_weight=".4"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="buscar"/>
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:text="@string/titulo_cubiculo"
+        android:gravity="center_horizontal"
+        android:textSize="25dp"
+        android:background="#000000"
+        android:textColor="#ffffff"/>
+
+    <TextView
+        android:id="@+id/tv_IPCubiculo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="H-124"
+        android:gravity="center_horizontal"
+        android:textSize="25dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/titulo_nodo"
+        android:gravity="center_horizontal"
+        android:textSize="25dp"
+        android:background="#000000"
+        android:textColor="#ffffff"/>
+
+    <TextView
+        android:id="@+id/tv_IPNodo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="H1N124"
+        android:gravity="center_horizontal"
+        android:textSize="25dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/titulo_usuario"
+        android:gravity="center_horizontal"
+        android:textSize="25dp"
+        android:background="#000000"
+        android:textColor="#ffffff"/>
+
+    <TextView
+        android:id="@+id/tv_IPUsuario"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Jorge Tovar"
+        android:gravity="center_horizontal"
+        android:textSize="25dp"/>
+</LinearLayout>

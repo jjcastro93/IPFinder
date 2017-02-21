@@ -1,6 +1,12 @@
 <resources>
-    <string name="app_name">IPFinder</string>
+    <string name="app_name">IpFinder</string>
     <string name="tv_cubiculo">Cubículo:</string>
     <string name="btn_buscar">Buscar</string>
     <string name="msj_cubiculoVacio">Ingresa un cubículo</string>
+    <string name="msj_principal">Bienvenido al sistema de consulta de IP de la División De Ciencias Sociales y Humanidades.</string>
+    <string name="btn_consultaIP">Consulta por IP</string>
+    <string name="btn_consultaCubiculo">Consulta por Cubiculo</string>
+    <string name="titulo_cubiculo">Cubículo</string>
+    <string name="titulo_nodo">Nodo</string>
+    <string name="titulo_usuario">Usuario</string>
 </resources>
