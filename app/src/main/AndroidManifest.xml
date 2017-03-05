@@ -28,6 +28,7 @@
                 android:value=".presentacion.vistas.PrincipalActivity">
             </meta-data>
         </activity>
+
         <activity
             android:name=".presentacion.vistas.BusquedaIPActivity"
             android:screenOrientation="portrait"
