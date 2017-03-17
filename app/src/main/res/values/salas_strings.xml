@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="salas">
+        <item>SALA A</item>
+        <item>SALA B</item>
+        <item>SALA C</item>
+        <item>SALA D</item>
+        <item>SALA E</item>
+        <item>SALA F</item>
+    </string-array>
+</resources>

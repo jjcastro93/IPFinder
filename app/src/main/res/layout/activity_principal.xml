@@ -36,7 +36,9 @@
         android:paddingTop="10dp"
         android:paddingBottom="10dp"
         android:layout_marginTop="25dp"
-        android:text="@string/btn_consultaIP"/>
+        android:text="@string/btn_consultaIP"
+        android:textStyle="bold"
+        android:background="@color/colorPrimaryDark"/>
 
     <Button
         android:id="@+id/btnConsultaCubiculo"
@@ -47,6 +49,7 @@
         android:paddingBottom="10dp"
         android:layout_marginTop="10dp"
         android:text="@string/btn_consultaCubiculo"
-        />
+        android:textStyle="bold"
+        android:background="@color/colorPrimaryDark"/>
 
 </LinearLayout>

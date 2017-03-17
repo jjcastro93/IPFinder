@@ -25,7 +25,7 @@ public class CubiculoBD extends SQLiteOpenHelper {
 
     private String cubiculoSQL(){
         return "CREATE TABLE " + TablaCubiculo.NOMBRE_TABLA + "(" +
-                TablaCubiculo.NOMBRE + " TEXT NOT NULL PRIMARY KEY," +
+                TablaCubiculo.NOMBRE + " TEXT NOT NULL," +
                 TablaCubiculo.IP + " TEXT NOT NULL," +
                 TablaCubiculo.NODO + " TEXT NOT NULL," +
                 TablaCubiculo.USUARIO + " TEXT NOT NULL)";

@@ -1,29 +1,35 @@
 package com.losjuanes.ipfinder.presentacion.vistas;
 
-import android.app.Activity;
+import android.content.Context;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
+import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 import android.widget.Button;
-import android.widget.EditText;
-import android.widget.TableLayout;
+import android.widget.ListView;
 import android.widget.Toast;
 
 import com.losjuanes.ipfinder.R;
+import com.losjuanes.ipfinder.negocio.dominio.Cubiculo;
 import com.losjuanes.ipfinder.presentacion.controladores.ImplementacionCtrldrBusquedaCubiculo;
+import com.losjuanes.ipfinder.presentacion.vistas.adaptadores.ListViewAdapter;
+
+import java.util.ArrayList;
 
 public class BusquedaCubiculoActivity extends AppCompatActivity {
-    private EditText etCubiculo;
+    private AutoCompleteTextView actvCubiculo;
     private Button btnBuscar;
-    private TableLayout tabla;
+    private ListView lvCubiculos;
 
     private ImplementacionCtrldrBusquedaCubiculo controlador;
 
-    private Activity busquedaCubiculoActivity = this;
+    private Context context= this;
 
     private String cubiculo = "";
+
+    private ArrayList<Cubiculo> cubiculoIps;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,9 +41,13 @@ public class BusquedaCubiculoActivity extends AppCompatActivity {
 
         controlador = new ImplementacionCtrldrBusquedaCubiculo();
 
-        etCubiculo = (EditText) findViewById(R.id.etCubiculo);
         btnBuscar = (Button) findViewById(R.id.btnBuscar);
-        tabla = (TableLayout) findViewById(R.id.tabla);
+        lvCubiculos = (ListView) findViewById(R.id.lvCubiculos);
+
+        actvCubiculo = (AutoCompleteTextView) findViewById(R.id.actvCubiculo);
+        String[] salas = getResources().getStringArray(R.array.salas);
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(context, android.R.layout.simple_list_item_1, salas);
+        actvCubiculo.setAdapter(adapter);
 
         //Se le asigna la funcionalidad al boton
         btnBuscar.setOnClickListener(new View.OnClickListener() {
@@ -46,14 +56,24 @@ public class BusquedaCubiculoActivity extends AppCompatActivity {
 
                 //Oculta el teclado
                 InputMethodManager inputMethodManager = (InputMethodManager)getSystemService(BusquedaCubiculoActivity.INPUT_METHOD_SERVICE);
-                inputMethodManager.hideSoftInputFromWindow(etCubiculo.getWindowToken(), 0);
+                inputMethodManager.hideSoftInputFromWindow(actvCubiculo.getWindowToken(), 0);
 
-                cubiculo = etCubiculo.getText().toString();
+                cubiculo = actvCubiculo.getText().toString();
 
-                if (cubiculo.compareTo("") != 0){
-                    controlador.agregarFilas(busquedaCubiculoActivity, tabla);
+                if (!cubiculo.equals("")){
+                    cubiculoIps = controlador.buscaCubiculo(context, cubiculo);
+
+                    if (cubiculoIps.size() > 0){
+                        //agregamos los elementos al listview
+                        ListViewAdapter listViewAdapter;
+
+                        listViewAdapter = new ListViewAdapter(context, cubiculoIps);
+                        lvCubiculos.setAdapter(listViewAdapter);
+                    } else {
+                        Toast.makeText(context, getResources().getString(R.string.msj_cubiculoNoExiste), Toast.LENGTH_SHORT).show();
+                    }
                 }else{
-                    Toast.makeText(busquedaCubiculoActivity, getResources().getString(R.string.msj_cubiculoVacio), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(context, getResources().getString(R.string.msj_cubiculoVacio), Toast.LENGTH_SHORT).show();
                 }
             }
         });

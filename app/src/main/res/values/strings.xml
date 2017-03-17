@@ -3,6 +3,7 @@
     <string name="tv_cubiculo">Cubículo:</string>
     <string name="btn_buscar">Buscar</string>
     <string name="msj_cubiculoVacio">Ingresa un cubículo</string>
+    <string name="msj_cubiculoNoExiste">El cubículo ingresado no existe.</string>
     <string name="msj_principal">Bienvenido al sistema de consulta de IP de la División De Ciencias Sociales y Humanidades.</string>
     <string name="btn_consultaIP">Consulta por IP</string>
     <string name="btn_consultaCubiculo">Consulta por Cubiculo</string>

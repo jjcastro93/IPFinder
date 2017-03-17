@@ -10,7 +10,7 @@ public final class Cubiculo {
 
     public static class TablaCubiculo {
         public static final String NOMBRE_TABLA = "cubiculo";
-        public static final String NOMBRE = "nombre";//PK
+        public static final String NOMBRE = "nombre";
         public static final String IP = "ip";
         public static final String NODO = "nodo";
         public static final String USUARIO = "usuario";

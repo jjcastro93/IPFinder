@@ -5,45 +5,45 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:weightSum="1"
     tools:context="com.losjuanes.ipfinder.presentacion.vistas.BusquedaCubiculoActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_weight=".1"
-        android:layout_height="0dp"
+        android:layout_height="60dp"
         android:orientation="horizontal"
         android:weightSum="1">
 
         <TextView
             android:layout_weight=".3"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:text="@string/tv_cubiculo"
             android:textSize="17dp"
-            android:gravity="center_horizontal"
-            android:layout_gravity="center_vertical"/>
+            android:gravity="center"/>
 
-        <EditText
-            android:id="@+id/etCubiculo"
+        <AutoCompleteTextView
+            android:id="@+id/actvCubiculo"
             android:layout_weight=".3"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:hint="H-111"/>
+            android:layout_height="match_parent"
+            android:hint="H-111"
+            android:digits="ABCDEFHILS0123456789- "
+            android:inputType="textCapCharacters" />
 
         <Button
             android:id="@+id/btnBuscar"
             android:layout_weight=".4"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:text="@string/btn_buscar"/>
+            android:layout_height="match_parent"
+            android:text="@string/btn_buscar"
+            android:textStyle="bold"
+            android:background="@color/colorPrimaryDark"/>
     </LinearLayout>
 
-    <TableLayout
-        android:id="@+id/tabla"
+    <ListView
+        android:id="@+id/lvCubiculos"
         android:layout_width="match_parent"
-        android:layout_weight=".9"
-        android:layout_height="0dp">
-    </TableLayout>
+        android:layout_height="wrap_content">
+    </ListView>
 
 </LinearLayout>
