@@ -7,10 +7,6 @@ import com.losjuanes.ipfinder.negocio.ModeloCubiculo;
 import com.losjuanes.ipfinder.negocio.ServicioCubiculo;
 import com.losjuanes.ipfinder.negocio.ServicioIP;
 
-/**
- * Created by josec on 17/02/2017.
- */
-
 public class ImplementacionCtrldrBusquedaIP implements CtrldrBusquedaIP {
     ServicioIP servicioIP = new ImplementacionServicioIP();
 

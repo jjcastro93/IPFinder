@@ -11,15 +11,16 @@
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:orientation="horizontal"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="10dp"
         android:weightSum="1">
 
         <TextView
             android:layout_weight=".3"
             android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:textSize="17dp"
-            android:gravity="right|center_vertical"
+            android:layout_height="wrap_content"
+            android:textSize="17sp"
+            android:gravity="end|center_vertical"
             android:text="148.206."/>
 
         <EditText
@@ -43,54 +44,51 @@
     </LinearLayout>
 
     <TextView
+        android:id="@+id/tv_tituloIPCubiculo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
-        android:text="@string/titulo_cubiculo"
         android:gravity="center_horizontal"
-        android:textSize="25dp"
-        android:background="#000000"
+        android:textSize="25sp"
         android:textColor="#ffffff"/>
 
     <TextView
         android:id="@+id/tv_IPCubiculo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="H-124"
+        android:text=""
         android:gravity="center_horizontal"
-        android:textSize="25dp"/>
+        android:textSize="25sp"/>
 
     <TextView
+        android:id="@+id/tv_tituloIPNodo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/titulo_nodo"
         android:gravity="center_horizontal"
-        android:textSize="25dp"
-        android:background="#000000"
+        android:textSize="25sp"
         android:textColor="#ffffff"/>
 
     <TextView
         android:id="@+id/tv_IPNodo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="H1N124"
+        android:text=""
         android:gravity="center_horizontal"
-        android:textSize="25dp"/>
+        android:textSize="25sp"/>
 
     <TextView
+        android:id="@+id/tv_tituloIPUsuario"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/titulo_usuario"
         android:gravity="center_horizontal"
-        android:textSize="25dp"
-        android:background="#000000"
+        android:textSize="25sp"
         android:textColor="#ffffff"/>
 
     <TextView
         android:id="@+id/tv_IPUsuario"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Jorge Tovar"
+        android:text=""
         android:gravity="center_horizontal"
-        android:textSize="25dp"/>
+        android:textSize="25sp"/>
 </LinearLayout>

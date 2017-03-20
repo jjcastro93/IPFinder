@@ -16,6 +16,8 @@ import com.losjuanes.ipfinder.negocio.ModeloCubiculo;
 import com.losjuanes.ipfinder.presentacion.controladores.CtrldrBusquedaIP;
 import com.losjuanes.ipfinder.presentacion.controladores.ImplementacionCtrldrBusquedaIP;
 
+import org.w3c.dom.Text;
+
 public class BusquedaIPActivity extends AppCompatActivity {
 
     CtrldrBusquedaIP ctrldrBusquedaIP = new ImplementacionCtrldrBusquedaIP();
@@ -26,6 +28,7 @@ public class BusquedaIPActivity extends AppCompatActivity {
     private EditText et_IP;
     private Button btn_buscar;
     private TextView tvIPcubiculo,tvIPnodo,tvIPusuario;
+    private TextView tvTituloIPcubiculo, tvTituloIPnodo, tvTituloIPusuario;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,25 +42,41 @@ public class BusquedaIPActivity extends AppCompatActivity {
         btn_buscar = (Button) findViewById(R.id.btn_buscar);
 
         tvIPcubiculo = (TextView) findViewById(R.id.tv_IPCubiculo);
+        tvTituloIPcubiculo = (TextView) findViewById(R.id.tv_tituloIPCubiculo);
         tvIPnodo = (TextView) findViewById(R.id.tv_IPNodo);
+        tvTituloIPnodo = (TextView) findViewById(R.id.tv_tituloIPNodo);
         tvIPusuario = (TextView) findViewById(R.id.tv_IPUsuario);
+        tvTituloIPusuario = (TextView) findViewById(R.id.tv_tituloIPUsuario);
 
         btn_buscar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String ip = "148.206." + et_IP.getText().toString();
 
-                InputMethodManager inputMethodManager = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
-                inputMethodManager.hideSoftInputFromWindow(et_IP.getWindowToken(), 0);
+                if (!et_IP.getText().toString().equals("")) {
+                    String ip = "148.206." + et_IP.getText().toString();
 
-                cubiculo = ctrldrBusquedaIP.buscarIP(context, ip);
+                    InputMethodManager inputMethodManager = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+                    inputMethodManager.hideSoftInputFromWindow(et_IP.getWindowToken(), 0);
 
-                if (cubiculo != null) {
-                    tvIPusuario.setText(cubiculo.getNombre());
-                    tvIPnodo.setText(cubiculo.getNodo());
-                    tvIPusuario.setText(cubiculo.getUsuario());
-                }else{
-                    Toast.makeText(context, "La ip no existe.", Toast.LENGTH_LONG).show();
+                    cubiculo = ctrldrBusquedaIP.buscarIP(context, ip);
+
+                    if (cubiculo != null) {
+                        tvTituloIPcubiculo.setText(R.string.titulo_cubiculo);
+                        tvTituloIPcubiculo.setBackgroundResource(R.color.colorAccent);
+                        tvIPcubiculo.setText(cubiculo.getNombre());
+
+                        tvTituloIPnodo.setText(R.string.titulo_nodo);
+                        tvTituloIPnodo.setBackgroundResource(R.color.colorPrimary);
+                        tvIPnodo.setText(cubiculo.getNodo());
+
+                        tvTituloIPusuario.setText(R.string.titulo_usuario);
+                        tvTituloIPusuario.setBackgroundResource(R.color.colorPrimaryDark);
+                        tvIPusuario.setText(cubiculo.getUsuario());
+                    } else {
+                        Toast.makeText(context, "La ip no existe.", Toast.LENGTH_LONG).show();
+                    }
+                }else {
+                    Toast.makeText(context, "Ingresa una IP.", Toast.LENGTH_SHORT).show();
                 }
             }
         });
