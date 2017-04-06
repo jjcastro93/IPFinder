@@ -53,6 +53,7 @@ public class BusquedaCubiculoActivity extends AppCompatActivity {
         btnBuscar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                ListViewAdapter listViewAdapter;
 
                 //Oculta el teclado
                 InputMethodManager inputMethodManager = (InputMethodManager)getSystemService(BusquedaCubiculoActivity.INPUT_METHOD_SERVICE);
@@ -65,12 +66,14 @@ public class BusquedaCubiculoActivity extends AppCompatActivity {
 
                     if (cubiculoIps.size() > 0){
                         //agregamos los elementos al listview
-                        ListViewAdapter listViewAdapter;
-
                         listViewAdapter = new ListViewAdapter(context, cubiculoIps);
                         lvCubiculos.setAdapter(listViewAdapter);
                     } else {
                         Toast.makeText(context, getResources().getString(R.string.msj_cubiculoNoExiste), Toast.LENGTH_SHORT).show();
+
+                        //se pone un adapter vacio
+                        listViewAdapter = new ListViewAdapter(context, new ArrayList<Cubiculo>());
+                        lvCubiculos.setAdapter(listViewAdapter);
                     }
                 }else{
                     Toast.makeText(context, getResources().getString(R.string.msj_cubiculoVacio), Toast.LENGTH_SHORT).show();

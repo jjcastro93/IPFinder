@@ -2,6 +2,7 @@ package com.losjuanes.ipfinder.datos;
 
 import android.content.Context;
 import android.database.Cursor;
+import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.util.Log;
 
@@ -22,7 +23,13 @@ public class ImplementacionDAOCubiculo implements DAOCubiculo{
         Cursor cursor;
 
         cubiculoBD = new CubiculoBD(context);
-        database = cubiculoBD.getReadableDatabase();
+
+        try {
+            cubiculoBD.importarBD();
+            database = cubiculoBD.openDataBase();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
 
         cursor = database.query(
                 TablaCubiculo.NOMBRE_TABLA,
@@ -59,7 +66,13 @@ public class ImplementacionDAOCubiculo implements DAOCubiculo{
         Cubiculo cubiculo;
 
         cubiculoBD = new CubiculoBD(context);
-        database = cubiculoBD.getReadableDatabase();
+
+        try {
+            cubiculoBD.importarBD();
+            database = cubiculoBD.openDataBase();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
 
         cursor = database.query(
                 TablaCubiculo.NOMBRE_TABLA,
@@ -68,7 +81,7 @@ public class ImplementacionDAOCubiculo implements DAOCubiculo{
                 new String[]{nomCubiculo},
                 null,
                 null,
-                TablaCubiculo.USUARIO + " ASC"
+                TablaCubiculo.IP + " ASC"
         );
 
         while (cursor.moveToNext()) {

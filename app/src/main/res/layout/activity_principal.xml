@@ -1,55 +1,55 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/activity_principal"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:paddingTop="25dp"
-    android:paddingRight="20dp"
-    android:paddingBottom="30dp"
-    android:paddingLeft="20dp"
-    tools:context="com.losjuanes.ipfinder.presentacion.vistas.PrincipalActivity">
+    android:fillViewport="true">
 
-    <ImageView
-        android:layout_width="250dp"
-        android:layout_height="210dp"
-        android:layout_gravity="center"
-        android:layout_marginLeft="30dp"
-        android:layout_marginRight="30dp"
-        android:src="@drawable/logo_uam_csh"/>
-
-    <TextView
+    <LinearLayout
+        android:id="@+id/activity_principal"
         android:layout_width="match_parent"
-        android:layout_height="80dp"
-        android:text="@string/msj_principal"
-        android:textAlignment="center"
-        android:textSize="20dp"
-        android:gravity="center"
-        android:textStyle="bold"/>
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingTop="25dp"
+        android:paddingRight="20dp"
+        android:paddingBottom="30dp"
+        android:paddingLeft="20dp"
+        tools:context="com.losjuanes.ipfinder.presentacion.vistas.PrincipalActivity">
 
-    <Button
-        android:id="@+id/btnConsultaIP"
-        android:layout_width="200dp"
-        android:layout_height="60dp"
-        android:layout_gravity="center_horizontal"
-        android:paddingTop="10dp"
-        android:paddingBottom="10dp"
-        android:layout_marginTop="25dp"
-        android:text="@string/btn_consultaIP"
-        android:textStyle="bold"
-        android:background="@color/colorPrimaryDark"/>
+        <ImageView
+            android:layout_width="280dp"
+            android:layout_height="250dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:src="@drawable/logo_completo"/>
 
-    <Button
-        android:id="@+id/btnConsultaCubiculo"
-        android:layout_width="200dp"
-        android:layout_height="60dp"
-        android:layout_gravity="center_horizontal"
-        android:paddingTop="10dp"
-        android:paddingBottom="10dp"
-        android:layout_marginTop="10dp"
-        android:text="@string/btn_consultaCubiculo"
-        android:textStyle="bold"
-        android:background="@color/colorPrimaryDark"/>
+        <Button
+            android:id="@+id/btnConsultaIP"
+            android:layout_width="200dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center_horizontal"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:layout_marginTop="25dp"
+            android:text="@string/btn_consultaIP"
+            android:textStyle="bold"
+            android:background="@color/colorPrimaryDark"/>
 
-</LinearLayout>
+        <Button
+            android:id="@+id/btnConsultaCubiculo"
+            android:layout_width="200dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center_horizontal"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:layout_marginTop="10dp"
+            android:text="@string/btn_consultaCubiculo"
+            android:textStyle="bold"
+            android:background="@color/colorPrimaryDark"/>
+
+    </LinearLayout>
+</ScrollView>

@@ -73,6 +73,18 @@ public class BusquedaIPActivity extends AppCompatActivity {
                         tvTituloIPusuario.setBackgroundResource(R.color.colorPrimaryDark);
                         tvIPusuario.setText(cubiculo.getUsuario());
                     } else {
+                        tvTituloIPcubiculo.setText("");
+                        tvTituloIPcubiculo.setBackgroundResource(0);
+                        tvIPcubiculo.setText("");
+
+                        tvTituloIPnodo.setText("");
+                        tvTituloIPnodo.setBackgroundResource(0);
+                        tvIPnodo.setText("");
+
+                        tvTituloIPusuario.setText("");
+                        tvTituloIPusuario.setBackgroundResource(0);
+                        tvIPusuario.setText("");
+
                         Toast.makeText(context, "La ip no existe.", Toast.LENGTH_LONG).show();
                     }
                 }else {
